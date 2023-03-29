@@ -1,7 +1,8 @@
-name: Testing Branch
+name: Main Branch
 on: 
-  push:
-    branches: [ testing ] 
+  pull_request_target:
+    types: [ closed ]
+    branches: [ main ] 
 jobs:
   if_merged:
     if: github.event.pull_request.merged == true
